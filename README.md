@@ -1,2 +1,2 @@
-Presidential Daily Brief Topic Model - Based on 1961-77 publicly available CIA documents
-
+Presidential Daily Brief Topic Model - Based on publicly available CIA documents 
+ranging from 1961 to 1977
