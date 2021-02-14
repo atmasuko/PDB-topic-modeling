@@ -83,7 +83,6 @@
             # Rbinding the dataframes (ranging the period 1961-1977)
             meta.df.61.77 <- rbind(meta.df.61.69, meta.df.69.77)
             
-            # André, a partir daqui você já consegue começar a transformar a coluna de data no formato MM/DD/AAAA
             meta.df.61.77$date = data.frame(date = str_extract(meta.df.61.77$Title,"\\d{1,2} \\w* \\d{4}")) 
             meta.df.61.77$link = data.frame(link.61.77 = paste0("https://www.cia.gov/readingroom/docs/DOC_",meta.df.61.77$Doc,".pdf"))
 
@@ -1420,7 +1419,7 @@
         
         
         ##############################
-        # Copy/Paste code para identificar documentos que contêm palavra-chave "Brazil"
+        # Copy/Paste code para identificar documentos que contÃªm palavra-chave "Brazil"
         
         library(dplyr)
         
