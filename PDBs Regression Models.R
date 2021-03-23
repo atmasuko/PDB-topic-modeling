@@ -92,3 +92,41 @@ plots2 <- plot_summs(lm_bra, lm_idn, lm_zas, lm_iran,
 
 # Saving the plots into a .pdf file
 ggsave(plots2, file = "plots_2.pdf")           
+
+# Plotting Binomial Regression Models
+# Brazil
+bra <- ggplot(data = devolution) + 
+  geom_smooth(mapping = aes(x = bra, y = dev), method = "glm", method.args=list(family="binomial"), se=TRUE) +
+  labs(x = "Brazil",
+       y = " ") +
+  theme_minimal()
+
+# Iran
+iran <- ggplot(data = devolution) + 
+  geom_smooth(mapping = aes(x = ira, y = dev), method = "glm", method.args=list(family="binomial"), se=TRUE) +
+  labs(x = "Iran",
+       y = " ") +
+  theme_minimal()
+
+# Indonesia
+idn <- ggplot(data = devolution) + 
+  geom_smooth(mapping = aes(x = idn, y = dev), method = "glm", method.args=list(family="binomial"), se=TRUE) +
+  labs(x = "Indonesia",
+       y = " ") +
+  theme_minimal()
+
+# South Africa
+zas <- ggplot(data = devolution) + 
+  geom_smooth(mapping = aes(x = zas, y = dev), method = "glm", method.args=list(family="binomial"), se=TRUE) +
+  labs(x = "South Africa",
+       y = " ") +
+  theme_minimal()
+
+# Arranging the plots side-by-side
+plots_binomial <- grid.arrange(bra, idn, iran, zas, 
+                      nrow = 2, ncol = 2, 
+                      left = "Devolution",
+                      top = "The Impact of a Country on Devolution (Binomial Models)")
+
+# Saving the plots into a .pdf file
+ggsave(plots_binomial, file = "plots_binomial.pdf")  
